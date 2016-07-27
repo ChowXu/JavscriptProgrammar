@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>a sample test</title>
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			#box {
+				width: 200px;
+				height: 400px;
+				background: red;
+				position: relative;
+				left: -200px;
+				top: 0px;
+			}
+			
+			#share {
+				width: 30px;
+				height: 80px;
+				background: blue;
+				position: absolute;
+				left: 200px;
+				top: 100px;
+				/*filter: alpha(opacity:30);*/
+				opacity:0.3;
+			}
+		</style>
+		<script>
+			window.onload = function() {
+				var oDiv = document.getElementById("box");
+				oDiv.onmouseover = function() {
+					startmove(50, 0);
+				};
+				oDiv.onmouseout = function() {
+					startmove(-50, -200);
+				}
+			};
+
+			var timer;
+			var startmove = function(speed, target) {
+				clearInterval(timer);
+				var oDiv = document.getElementById("box");
+				timer = setInterval(function() {
+
+					if(oDiv.offsetLeft == target)
+						clearInterval(timer);
+					else
+						oDiv.style.left = oDiv.offsetLeft + speed + 'px';
+				}, 30)
+
+			};
+		</script>
+
+	</head>
+
+	<body>
+		<div id="box">
+			<span id="share"></span>
+
+		</div>
+	</body>
+
+</html>

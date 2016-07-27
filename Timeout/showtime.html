@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+		<style>
+			body {
+				margin: 0;
+			}
+			
+			#time {
+				width: 200px;
+				margin: 200px auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="time">show time here</div>
+
+		<script>
+			window.onload = function(){
+				showtime();
+			}
+
+			function showtime() {
+				var otime = document.getElementById('time');
+				var date = new Date();
+				var year = date.getFullYear();
+				var month = date.getMonth() + 1;
+				var odate = date.getDate();
+				var hours = date.getHours();
+				var minutes = date.getMinutes();
+				var seconds = date.getSeconds();
+				minutes = checkNumber(minutes);
+				seconds = checkNumber(seconds);
+
+				var html = year + '年' + month + 'month' + odate + 'day' + hours + ':' + seconds;
+
+				otime.innerHTML = html;
+
+				setTimeout(showtime, 1000);
+
+			}
+			
+			function checkNumber(i) {
+					if(i < 10)
+						i = '0' + i;
+					return i;
+				};
+		</script>
+
+	</body>
+
+</html>

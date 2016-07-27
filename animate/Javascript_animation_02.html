@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>a sample test</title>
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			#box {
+				width: 200px;
+				height: 400px;
+				background: red;
+				position: relative;
+				left: -200px;
+				top: 0px;
+			}
+			
+			#share {
+				width: 30px;
+				height: 80px;
+				background: blue;
+				position: absolute;
+				left: 200px;
+				top: 100px;
+				/*fliter:alpha(opacity:30);*/
+				filter: alpha(opacity=30);
+
+				opacity:0.3;
+			}
+		</style>
+		<script>
+			window.onload = function() {
+				var oDiv = document.getElementById("box");
+				oDiv.alpha = 30;
+				oDiv.onmouseover = function() {
+					
+				};
+				oDiv.onmouseout = function() {
+					startmove(30);
+				}
+			};
+
+			var timer;
+			
+			var startmove = function(target) {
+				clearInterval(timer);
+				
+				timer = setInterval(function() {
+					var speed ;
+					if(oDiv.alpha < target)
+						speed = 10;
+					else 
+						speed = -10;
+					
+					if(oDiv.alpha == target)
+						clearInterval(timer);
+					else{
+						oDiv.alpha += speed;
+						oDiv.style.filter = 'alpha(opacity:' + oDiv.alpha + ')';
+						oDiv.style.opacity = oDiv.alpha / 100;
+						
+					}
+						
+				}, 300)
+
+			};
+		</script>
+
+	</head>
+
+	<body>
+		<div id="box">
+			<span id="share"></span>
+
+		</div>
+	</body>
+
+</html>
