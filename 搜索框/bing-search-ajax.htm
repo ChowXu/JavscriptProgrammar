@@ -44,7 +44,7 @@
  	<div class="logo"></div>
  	
 	 	<form class="search-form" action="https://cn.bing.com/search" target="_blank" id="search-form">
-	 		<input type="text" class="search-text" name="q" id="search_input" autocomplete="off"/>
+	 		<input type="text" class="search-text" name="q" id="search_input"  x-webkit-speech="" />
 	 		<input type="submit" class="search-button" value=""/>
 	 	</form>
 
@@ -62,11 +62,19 @@
 	var jqueryInput = $(this);
 	var searchText = jqueryInput.val();
 	$.get('http://api.bing.com/qsonhs.aspx?q='+searchText);
- });
-$('#search-suggest').css({
+	
+	
+	$('#search-suggest').css({
 	top:$('#search-form').offset().top+$('#search-form').height()+10,
 	left:$('#search-form').offset().left
 }).show();
+	
+ });
+ 
+ $(document).on('click',function(){
+ 	$('#search-suggest').hide();
+ })
+
 
  </script>
 </body>
