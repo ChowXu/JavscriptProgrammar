@@ -21,7 +21,7 @@
 		<div id="time">show time here</div>
 
 		<script>
-			window.onload = function(){
+			window.onload = function() {
 				showtime();
 			}
 
@@ -36,20 +36,17 @@
 				var seconds = date.getSeconds();
 				minutes = checkNumber(minutes);
 				seconds = checkNumber(seconds);
-
 				var html = year + '年' + month + 'month' + odate + 'day' + hours + ':' + seconds;
-
 				otime.innerHTML = html;
-
 				setTimeout(showtime, 1000);
 
 			}
-			
+
 			function checkNumber(i) {
-					if(i < 10)
-						i = '0' + i;
-					return i;
-				};
+				if(i < 10)
+					i = '0' + i;
+				return i;
+			};
 		</script>
 
 	</body>

@@ -33,20 +33,20 @@
 				var time = document.getElementById('time');
 				var now = new Date();
 				var endtime = new Date("2017,8,9");
-				var otime = Math.ceil((endtime.getTime() - now.getTime())/1000);
-				//alert(otime);
+				var otime = Math.ceil((endtime.getTime() - now.getTime()) / 1000);
+				console.log(otime);
+
 				var day = parseInt(otime / (60 * 60 * 24));
 				var hours = parseInt(otime / (60 * 60) % 24);
 				var minutes = parseInt(otime / 60 % 60);
 				var seconds = parseInt(otime % 60);
 
 				var html = day + 'day' + hours + ':' + minutes + ':' + seconds;
-				//alert(html);
-
+				console.log(html);
 				if(otime > 0)
 					time.innerHTML = html;
 				else
-					time.innerHTMl= 'timeout';
+					time.innerHTMl = 'timeout';
 
 				setTimeout(showtime, 1000);
 

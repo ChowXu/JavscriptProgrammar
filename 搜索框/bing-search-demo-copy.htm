@@ -1,14 +1,74 @@
 <html>
-<head>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-	<title>bing search</title>
 
-</head>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>bing search</title>
+		<style type="text/css">
+			body {
+				background-color: #737373;
+			}
+			
+			.bg-div {
+				position: relative;
+				margin: 0 auto;
+				width: 1266px;
+				height: 768px;
+				background-image: url(river.jpg);
+			}
+			.logo {
+				background-image: url(logo.png);
+				height: 53px;
+				width: 107px;
+				float: left;
+				margin: -4 15 0 0;
+			}
+	
+			.search-form {
+				float: left;
+				background-color: #FFFFFF;
+				padding:5px ;
+				
+			}
+			.search-text {
+				width: 350px;
+				height: 25px;
+				line-height: 25px;
+				border:0;
+				float:left;
+				outline: none;
+			}
+			.search-button {
+				background-image: url(search-button.png);
+				height: 29px;
+				width: 29px;
+				border:0;
+				float: left;
+			}
+			.search-box {
+				position:absolute;
+				top:150px;
+				left:230px;
+			}
+			
+			
+		</style>
 
-<body>
- <div>
- 	
- 	
- </div>
-</body>
+	</head>
+
+	<body>
+		<div>
+			<div class="bg-div">
+				<div class="search-box">
+					<div class="logo"></div>
+					<form action="#" class="search-form">
+						<input class="search-text" type="text" x-webkit-speech="" />
+						<input class="search-button" type="submit" value="" />
+					</form>
+				</div>
+			</div>
+		</div>
+
+		
+	</body>
+
 </html>
